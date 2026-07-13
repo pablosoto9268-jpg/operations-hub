@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Pablo Soto Maldonado | Warehouse & Supply Chain Manager</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        :root {
+            --bg-primary: #0d0f12;
+            --bg-secondary: #161a22;
+            --accent-blue: #0052ff;
+            --accent-cyan: #00d2ff;
+            --text-main: #ffffff;
+            --text-muted: #8a99ad;
+            --border-color: #262e3d;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        body { background-color: var(--bg-primary); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
+        nav { position: fixed; top: 0; width: 100%; background-color: rgba(13, 15, 18, 0.95); border-bottom: 1px solid var(--border-color); padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+        nav .logo { font-weight: 900; letter-spacing: 1px; font-size: 1.1rem; }
+        nav .logo span { color: var(--accent-cyan); }
+        nav ul { display: flex; list-style: none; gap: 2rem; }
+        nav ul a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; transition: color 0.3s; }
+        nav ul a:hover { color: var(--text-main); }
+        header { padding: 10rem 2rem 4rem 2rem; max-width: 1200px; margin: 0 auto; min-height: 80vh; display: flex; flex-direction: column; justify-content: center; }
+        .badge { background-color: rgba(0, 82, 255, 0.1); color: var(--accent-cyan); padding: 0.5rem 1rem; border-radius: 4px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; border: 1px solid rgba(0, 210, 255, 0.2); width: fit-content; margin-bottom: 1.5rem; }
+        h1 { font-size: 4rem; font-weight: 900; line-height: 1.1; letter-spacing: -1px; margin-bottom: 1.5rem; }
+        header p { font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin-bottom: 3rem; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .metric-card { background-color: var(--bg-secondary); border: 1px solid var(--border-color); padding: 2.5rem; border-radius: 8px; position: relative; overflow: hidden; }
+        .metric-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background-color: var(--accent-blue); }
+        .metric-number { font-size: 3.5rem; font-weight: 900; color: var(--text-main); line-height: 1; margin-bottom: 0.5rem; }
+        .metric-label { color: var(--text-muted); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .brands-section { padding: 4rem 2rem; background-color: rgba(22, 26, 34, 0.4); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); text-align: center; }
+        .brands-title { font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 2rem; }
+        .brands-container { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4rem; }
+        .brands-container img { height: 35px; object-fit: contain; filter: grayscale(100%) brightness(200%) contrast(100%); opacity: 0.6; transition: all 0.3s ease; }
+        .brands-container img:hover { filter: grayscale(0%) brightness(100%); opacity: 1; }
+        section { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .section-title { font-size: 2rem; font-weight: 900; margin-bottom: 3rem; text-transform: uppercase; letter-spacing: -0.5px; }
+        .section-title span { color: var(--accent-blue); }
+        .competencies-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 2rem; }
+        @media (max-width: 768px) {
+            .competencies-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2.5rem; }
+            .brands-container { gap: 2rem; }
+            .brands-container img { height: 25px; }
+            .contact-wrapper { grid-template-columns: 1fr !important; }
+        }
+        .comp-card { background-color: var(--bg-secondary); border: 1px solid var(--border-color); padding: 2.5rem; border-radius: 8px; }
+        .comp-card h3 { font-size: 1.2rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem; color: var(--accent-cyan); }
+        .comp-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .tag { background-color: rgba(38, 46, 61, 0.5); border: 1px solid var(--border-color); padding: 0.4rem 0.8rem; border-radius: 4px; font-size: 0.8rem; color: var(--text-main); }
+        .timeline { display: flex; flex-direction: column; gap: 3rem; border-top: 1px solid var(--border-color); padding-top: 3rem; }
+        .job-card { background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; padding: 3rem; }
+        .job-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem; margin-bottom: 1.5rem; }
+        .job-title h3 { font-size: 1.5rem; font-weight: 900; }
+        .job-title p { color: var(--accent-cyan); font-weight: 700; font-size: 0.9rem; }
+        .job-date { background-color: var(--bg-primary); border: 1px solid var(--border-color); padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); }
+        .job-body h4 { font-size: 1rem; margin: 1.5rem 0 0.8rem 0; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-main); }
+        .job-body ul { list-style: none; }
+        .job-body li { position: relative; padding-left: 1.5rem; margin-bottom: 0.8rem; color: var(--text-muted); font-size: 0.95rem; }
+        .job-body li::before { content: "→"; position: absolute; left: 0; color: var(--accent-blue); font-weight: bold; }
+        .highlight-box { background: linear-gradient(90deg, rgba(0,82,255,0.1) 0%, rgba(0,0,0,0) 100%); border-left: 3px solid var(--accent-blue); padding: 1.5rem; margin-top: 1.5rem; border-radius: 0 8px 8px 0; }
+        .highlight-box p { font-size: 1rem; font-weight: 700; color: var(--text-main); }
+        .tech-section { border-top: 1px solid var(--border-color); }
+        .tech-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+        .tech-box { background-color: var(--bg-secondary); border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 6px; text-align: center; }
+        .tech-box i { font-size: 2rem; color: var(--accent-cyan); margin-bottom: 1rem; }
+        .tech-box h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.3rem; }
+        .tech-box p { font-size: 0.75rem; color: var(--text-muted); }
+        .contact-section { border-top: 1px solid var(--border-color); background-color: rgba(22, 26, 34, 0.2); }
+        .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 2rem; }
+        .contact-info h3 { font-size: 1.8rem; margin-bottom: 1rem; font-weight: 900; }
+        .contact-info p { color: var(--text-muted); margin-bottom: 2rem; }
+        .direct-links { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+        .btn-contact { background-color: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-main); padding: 1rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 0.8rem; transition: all 0.3s; width: 100%; }
+        .btn-contact:hover { border-color: var(--accent-cyan); background-color: rgba(0, 210, 255, 0.05); }
+        .contact-form { background-color: var(--bg-secondary); border: 1px solid var(--border-color); padding: 2.5rem; border-radius: 8px; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; color: var(--text-muted); }
+        .form-group input, .form-group textarea { width: 100%; background-color: var(--bg-primary); border: 1px solid var(--border-color); padding: 0.8rem 1rem; color: var(--text-main); border-radius: 4px; font-size: 0.9rem; transition: border-color 0.3s; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent-blue); }
+        .btn-submit { background-color: var(--accent-blue); color: var(--text-main); border: none; width: 100%; padding: 1rem; border-radius: 4px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: background-color 0.3s; }
+        .btn-submit:hover { background-color: #0044d4; }
+        footer { background-color: var(--bg-primary); border-top: 1px solid var(--border-color); padding: 3rem 2rem; text-align: center; font-size: 0.8rem; color: var(--text-muted); }
+        .availability { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 1rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">JPSM<span>.LOGISTICS</span></div>
+        <ul>
+            <li><a href="#perfil">Perfil</a></li>
+            <li><a href="#competencias">Control</a></li>
+            <li><a href="#trayectoria">Operaciones</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    <header id="perfil">
+        <div class="badge">Liderazgo En Terreno y Estrategia End-to-End</div>
+        <h1>JUAN PABLO SOTO MALDONADO</h1>

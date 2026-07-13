@@ -3,126 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juan Pablo Soto Maldonado | Portafolio de Ingeniería de Operaciones</title>
+    <title>Juan Pablo Soto | Supply Chain & Operations Leader</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         :root {
-            --bg-dark: #0a0c10;
-            --bg-card: #12161f;
-            --accent-glow: #0052ff;
-            --accent-cyan: #00d2ff;
-            --text-light: #ffffff;
-            --text-gray: #94a3b8;
+            --bg-main: #070a0f;
+            --bg-card: #0d131f;
+            --bg-card-hover: #141d2f;
+            --accent: #cbb26a; /* Dorado elegante que combina con tu logo JPS */
+            --accent-blue: #2563eb;
+            --text-title: #f8fafc;
+            --text-body: #94a3b8;
             --border: #1e293b;
+            --success: #10b981;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; }
-        nav { position: fixed; top: 0; width: 100%; background-color: rgba(10, 12, 16, 0.95); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
-        nav .brand { font-weight: 900; font-size: 1.1rem; letter-spacing: 1px; }
-        nav .brand span { color: var(--accent-cyan); }
-        nav ul { display: flex; list-style: none; gap: 1.5rem; }
-        nav ul a { color: var(--text-gray); text-decoration: none; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; transition: 0.3s; }
-        nav ul a:hover { color: var(--text-light); }
-        header { padding: 8rem 2rem 4rem 2rem; max-width: 1200px; margin: 0 auto; text-align: center; }
-        .hero-badge { background-color: rgba(0, 210, 255, 0.1); color: var(--accent-cyan); padding: 0.5rem 1rem; border-radius: 4px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; border: 1px solid rgba(0, 210, 255, 0.2); width: fit-content; margin: 0 auto 1.5rem auto; }
-        h1 { font-size: 3rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 1rem; }
-        header p { font-size: 1.1rem; color: var(--text-gray); max-width: 800px; margin: 0 auto 3rem auto; }
-        section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
-        .section-title { font-size: 1.8rem; font-weight: 900; margin-bottom: 2rem; text-transform: uppercase; border-left: 4px solid var(--accent-glow); padding-left: 1rem; }
-        .section-title span { color: var(--accent-cyan); }
-        .grid-cases { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
-        .case-card { background-color: var(--bg-card); border: 1px solid var(--border); padding: 2rem; border-radius: 8px; position: relative; }
-        .case-card h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 1rem; color: var(--accent-cyan); }
-        .case-meta { font-size: 0.8rem; font-weight: 700; color: var(--text-gray); text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 0.5px; }
-        .case-body h4 { font-size: 0.9rem; text-transform: uppercase; color: var(--text-light); margin: 1rem 0 0.4rem 0; }
-        .case-body p { font-size: 0.9rem; color: var(--text-gray); margin-bottom: 0.5rem; }
-        .metric-badge { display: inline-block; background-color: rgba(0, 82, 255, 0.15); color: #fff; border: 1px solid var(--accent-glow); padding: 0.4rem 0.8rem; border-radius: 4px; font-weight: 700; font-size: 0.85rem; margin-top: 0.5rem; }
-        .tech-flow { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem; }
-        .flow-box { background-color: var(--bg-card); border: 1px solid var(--border); padding: 1.5rem; border-radius: 6px; flex: 1; min-width: 250px; }
-        .flow-box i { font-size: 1.8rem; color: var(--accent-cyan); margin-bottom: 0.8rem; }
-        .flow-box h4 { font-size: 1rem; font-weight: 800; margin-bottom: 0.5rem; }
-        .flow-box ul { list-style: none; font-size: 0.85rem; color: var(--text-gray); }
-        .flow-box li { margin-bottom: 0.4rem; padding-left: 1rem; position: relative; }
-        .flow-box li::before { content: "▪"; position: absolute; left: 0; color: var(--accent-glow); }
-        .contact-panel { background: linear-gradient(135deg, var(--bg-card) 0%, #0f131a 100%); border: 1px solid var(--border); border-radius: 8px; padding: 3rem; text-align: center; }
-        .contact-panel h3 { font-size: 1.5rem; font-weight: 900; margin-bottom: 1rem; }
-        .contact-panel p { color: var(--text-gray); max-width: 600px; margin: 0 auto 2rem auto; font-size: 0.95rem; }
-        .links-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
-        .btn-action { background-color: #1e293b; border: 1px solid var(--border); color: #fff; padding: 0.8rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 0.6rem; transition: 0.3s; }
-        .btn-action:hover { border-color: var(--accent-cyan); background-color: rgba(0, 210, 255, 0.05); }
-        .btn-main { background-color: var(--accent-glow); border: none; }
-        .btn-main:hover { background-color: #0044d4; }
-        footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--text-gray); }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--bg-main); color: var(--text-body); line-height: 1.6; }
+        
+        /* Navigation */
+        nav { position: fixed; top: 0; width: 100%; background-color: rgba(7, 10, 15, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 1.2rem 4rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+        .logo { font-weight: 800; font-size: 1.1rem; color: var(--text-title); letter-spacing: -0.5px; }
+        .logo span { color: var(--accent); }
+        nav ul { display: flex; list-style: none; gap: 2.5rem; }
+        nav ul a { color: var(--text-body); text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: 0.3s; }
+        nav ul a:hover { color: var(--text-title); }
+
+        /* Main Executive Banner Placement */
+        .hero-banner-container { padding-top: 5rem; max-width: 1200px; margin: 0 auto; width: 100%; text-align: center; }
+        .hero-banner-img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 20px 40px rgba(0,0,0,0.5); margin-top: 1.5rem; }
+
+        header { padding: 4rem 2rem 4rem 2rem; max-width: 1100px; margin: 0 auto; text-align: center; }
+        h1 { font-size: 2.5rem; font-weight: 800; color: var(--text-title); letter-spacing: -1px; margin-bottom: 1rem; }
+        header p { font-size: 1.1rem; max-width: 800px; margin: 0 auto; color: var(--text-body); }
+
+        /* Interactive Tabs for Projects */
+        section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; border-top: 1px solid var(--border); }
+        .section-header { margin-bottom: 3rem; }
+        .section-tag { color: var(--accent); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.5rem; }
+        .section-title { font-size: 2rem; font-weight: 800; color: var(--text-title); letter-spacing: -0.5px; }
+
+        .tabs-nav { display: flex; gap: 1rem; margin-bottom: 2.5rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; overflow-x: auto; }
+        .tab-btn { background: none; border: none; color: var(--text-body); font-size: 0.9rem; font-weight: 700; padding: 0.6rem 1.2rem; cursor: pointer; border-radius: 6px; transition: 0.3s; white-space: nowrap; }
+        .tab-btn.active { background-color: rgba(203, 178, 106, 0.15); color: #fde047; border: 1px solid rgba(203, 178, 106, 0.3); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.5s ease; }
+
+        /* Project Layout */
+        .project-display { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; background-color: var(--bg-card); border: 1px solid var(--border); padding: 3rem; border-radius: 16px; }
+        .pro-meta h3 { font-size: 1.5rem; font-weight: 800; color: var(--text-title); margin-bottom: 1rem; }
+        .pro-meta p { font-size: 0.95rem; margin-bottom: 2rem; }
+        .pro-metric { background-color: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2); padding: 1.5rem; border-radius: 8px; color: #a7f3d0; }
+        .pro-metric h5 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem; color: var(--success); }
+        .pro-metric p { font-size: 1.1rem; font-weight: 700; margin: 0; }
+        .pro-details h4 { font-size: 0.85rem; text-transform: uppercase; color: var(--text-title); letter-spacing: 1px; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; }
+        .pro-details h4 i { color: var(--accent-blue); }
+        .pro-details ul { list-style: none; margin-bottom: 2rem; }
+        .pro-details li { font-size: 0.95rem; margin-bottom: 0.6rem; padding-left: 1.2rem; position: relative; }
+        .pro-details li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+
+        /* Methodology Capabilities Grid */
+        .capabilities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .cap-card { background-color: var(--bg-card); border: 1px solid var(--border); padding: 2.5rem; border-radius: 12px; }
+        .cap-card h3 { font-size: 1.15rem; color: var(--text-title); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+        .cap-card h3 i { color: var(--accent); }
+        .cap-card ul { list-style: none; }
+        .cap-card li { font-size: 0.9rem; margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.6rem; }
+        .cap-card li i { color: var(--success); font-size: 0.85rem; margin-top: 0.3rem; }
+
+        /* Contact Section */
+        .ct-panel { background: radial-gradient(circle at top right, var(--bg-card-hover), var(--bg-card)); border: 1px solid var(--border); border-radius: 16px; padding: 4rem 3rem; text-align: center; }
+        .ct-panel h3 { font-size: 1.8rem; font-weight: 800; color: var(--text-title); margin-bottom: 1rem; }
+        .ct-panel p { max-width: 600px; margin: 0 auto 2.5rem auto; }
+        .ct-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+        .btn { padding: 0.8rem 1.8rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.7rem; transition: 0.3s; }
+        .btn-primary { background-color: var(--accent-blue); color: #fff; }
+        .btn-primary:hover { background-color: #1d4ed8; }
+        .btn-secondary { background-color: transparent; border: 1px solid var(--border); color: var(--text-title); }
+        .btn-secondary:hover { background-color: rgba(255,255,255,0.02); border-color: var(--text-body); }
+
+        footer { padding: 3rem 2rem; text-align: center; font-size: 0.8rem; border-top: 1px solid var(--border); margin-top: 4rem; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+        @media(max-width: 768px) { nav { padding: 1.2rem 1.5rem; } nav ul { display: none; } .project-display { grid-template-columns: 1fr; padding: 1.5rem; } h1 { font-size: 2rem; } }
     </style>
 </head>
 <body>
+
     <nav>
-        <div class="brand">JPSM<span>.OPERATIONS</span></div>
+        <div class="logo">JPS<span>.LEADER</span></div>
         <ul>
-            <li><a href="#proyectos">Casos de Éxito</a></li>
-            <li><a href="#metodologia">Resolución en Terreno</a></li>
+            <li><a href="#proyectos">Casos Técnicos</a></li>
+            <li><a href="#metodologia">Gobernanza</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
+
+    <!-- Sección de tu Banner Principal Incorporado -->
+    <div class="hero-banner-container">
+        <img src="https://imgur.com" alt="JPS Supply Chain & Operations Leader" class="hero-banner-img">
+    </div>
+
     <header>
-        <div class="hero-badge">Evidencia Operativa End-to-End</div>
-        <h1>CONCENTRADO DE PROYECTOS Y CONTROL</h1>
-        <p>Más allá de las descripciones de puestos tradicionales, este espacio presenta de manera concreta problemas logísticos complejos resueltos en terreno, metodologías aplicadas y los resultados financieros alcanzados.</p>
+        <h1>PLATAFORMA DE INGENIERÍA Y DIRECCIÓN OPERATIVA</h1>
+        <p>Este espacio interactivo funciona como un concentrado estratégico complementario a mi perfil ejecutivo. A continuación se presentan las metodologías aplicadas en andén, gobernanza técnica y soluciones a retos de alta complejidad en Supply Chain.</p>
     </header>
+
     <section id="proyectos">
-        <h2 class="section-title">Casos de Éxito e <span>Ingeniería Aplicada</span></h2>
-        <div class="grid-cases">
-            <div class="case-card">
-                <div class="case-meta">Diseño de Infraestructura y Redes</div>
-                <h3>Optimización de Layout e Inventario de Alta Rotación</h3>
-                <div class="case-body">
-                    <h4>El Reto en Andén:</h4>
-                    <p>Descoordinación en flujos de surtido, cuellos de botella en picking y tiempos elevados en cargas que penalizaban el costo de servir.</p>
-                    <h4>Solución de Ingeniería:</h4>
-                    <p>Reestructuración completa del Layout del almacén basada en análisis ABC dinámico, zonificación especializada para Cadena de Frío e implementación estricta de estrategias de rotación (FIFO/FEFO).</p>
-                    <div class="metric-badge"><i class="fa-solid fa-chart-line"></i> IMPACTO: Incremento en la precisión del inventario y optimización de flujos.</div>
-                </div>
-            </div>
-            <div class="case-card">
-                <div class="case-meta">Gobernanza de Transportes y 3PL/4PL</div>
-                <h3>Estandarización de Flota y Control de Proveedores Logísticos</h3>
-                <div class="case-body">
-                    <h4>El Reto en Andén:</h4>
-                    <p>Falta de visibilidad y control sobre más de 30 proveedores logísticos externos, generando variabilidad en los niveles de servicio contractuales (SLAs).</p>
-                    <h4>Solución de Ingeniería:</h4>
-                    <p>Diseño y despliegue integral de tableros de control de métricas OTIF (On-Time In-Full) e implementación de Vendor Scorecards para evaluar y penalizar desviaciones en tiempo real.</p>
-                    <div class="metric-badge"><i class="fa-solid fa-arrow-down"></i> IMPACTO: Reducción del ~25% en incidencias de servicio en andenes.</div>
-                </div>
-            </div>
-            <div class="case-card">
-                <div class="case-meta">Logística Multimodal y Proyectos Cross-Border</div>
-                <h3>Logística Internacional y Operaciones Especializadas</h3>
-                <div class="case-body">
-                    <h4>El Reto en Andén:</h4>
-                    <p>Coordinación crítica de embarques multimodales con requerimientos aduaneros estrictos para exportación y cruce de mercancías.</p>
-                    <h4>Solución de Ingeniería:</h4>
-                    <p>Estructuración de flujos logísticos consolidados de comercio exterior, optimizando rutas terrestres de tractocamiones e interconexión marítima hacia Puerto Rico.</p>
-                    <div class="metric-badge"><i class="fa-solid fa-shield-halved"></i> IMPACTO: Mitigación de riesgos aduaneros y andenes asegurados.</div>
-                </div>
-            </div>
+        <div class="section-header">
+            <div class="section-tag">Evidencia Empírica</div>
+            <h2 class="section-title">Resolución de Problemas Complejos</h2>
         </div>
-    </section>
-    <section id="metodologia">
-        <h2 class="section-title">¿Cómo Resuelvo en la Operación? <span>Metodología de Control</span></h2>
-        <div class="tech-flow">
-            <div class="flow-box">
-                <i class="fa-solid fa-layer-group"></i>
-                <h4>1. Arquitectura de Datos</h4>
-                <ul>
-                    <li>Modelado de costo de servir para cotizaciones complejas B2B.</li>
-                    <li>Uso avanzado de herramientas analíticas para pronósticos (Forecast) de demanda.</li>
-                    <li>Sincronización de sistemas informáticos empresariales (WMS / TMS / SAP).</li>
-                </ul>
-            </div>
-            <div class="flow-box">
-                <i class="fa-solid fa-users-gear"></i>
-                <h4>2. Liderazgo en Terreno</h4>
-                <ul>
-                    <li>Coordinación directa de plantillas operativas de más de 250 colaboradores.</li>
-                    <li>Enfoque total en la seguridad industrial y erradicación de cuellos de botella cotidianos.</li>
+
+        <div class="tabs-nav">
+            <button class="tab-btn active" onclick="openTab(event, 'case1')">Diseño de Layout e Inventarios</button>
+            <button class="tab-btn" onclick="openTab(event, 'case2')">Gobernanza de Red 3PL / 4PL</button>
+            <button class="tab-btn" onclick="openTab(event, 'case3')">Logística Multimodal y Cross-Border</button>
+        </div>
+
+        <!-- Proyecto 1 -->
+        <div id="case1" class="tab-content active">
+            <div class="project-display">
+                <div class="pro-meta">
+                    <h3>Reestructuración de Flujos de Almacenamiento</h3>
+                    <p>Falta de fluidez en picking y saturación de andenes que incrementaban los costos operativos y penalizaban la velocidad de respuesta comercial.</p>
+                    <div class="pro-metric">
+                        <h5>Enfoque de Resultados</h5>
+                        <p>Optimización del costo de servir y máxima exactitud de inventarios.</p>
+                    </div>
+                </div>
+                <div class="pro-details">
+                    <h4><i class="fa-solid fa-gears"></i> Metodología de Ingeniería Aplicada</h4>
+                    <ul>
+                        <li>Clasificación de mercancías mediante análisis ABC dinámico por velocidad de rotación.</li>
+                        <li>Zonificación especializada para resguardo y preservación de Cadena de Frío (Multi-temperatura).</li>
+                        <li>Despliegue de políticas estrictas de flujo de inventario bajo criterios FIFO y FEFO.</li>
+                    </ul>
+                    <h4><i class="fa-solid fa-layer-group"></i> Herramientas Utilizadas</h4>

@@ -56,8 +56,22 @@
 
 <section class="contact" id="contacto"><div class="wrap"><p class="eyebrow"> · ESTADO DE MÉXICO</p><h2>Construyamos una operación<br><i>que sí responda.</i></h2><div class="contact-grid"><p>Disponible para posiciones de liderazgo en Supply Chain, Warehouse, Transportation y Operations. Disponibilidad para reubicación nacional.</p><div class="actions"><a class="btn dark" href="mailto:pablo.soto9268@outlook.com">pablo.soto9268@outlook.com</a><a class="btn" href="https://linkedin.com/in/juan-pablo-s-bb9a8b405">LinkedIn ↗</a></div></div><footer><span>JUAN PABLO SOTO MALDONADO</span><span>ESPAÑOL NATIVO · INGLÉS INTERMEDIO</span><a href="#inicio">VOLVER ARRIBA ↑</a></footer></div></section>
 <script>
-const bar=document.querySelector('.progress');addEventListener('scroll',()=>bar.style.width=scrollY/(document.documentElement.scrollHeight-innerHeight)*100+'%');
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.1});document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
-const ss=[...document.querySelectorAll('main section[id]')],ls=[...document.querySelectorAll('nav a')];addEventListener('scroll',()=>{const s=ss.filter(x=>x.offsetTop<scrollY+180).pop();ls.forEach(a=>a.classList.toggle('on',s&&a.getAttribute('href')==='#'+s.id))});
+const bar=document.querySelector('.progress');
+addEventListener('scroll',()=>{
+  const total=document.documentElement.scrollHeight-innerHeight;
+  const pct=total>0?(scrollY/total)*100:0;
+  if(bar)bar.style.width=pct+'%';
+});
+if('IntersectionObserver'in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
+}else{
+  document.querySelectorAll('.reveal').forEach(x=>x.classList.add('in'));
+}
+const ss=[...document.querySelectorAll('main section[id]')],ls=[...document.querySelectorAll('nav a')];
+addEventListener('scroll',()=>{
+  const s=ss.filter(x=>x.offsetTop<scrollY+180).pop();
+  ls.forEach(a=>a.classList.toggle('on',s&&a.getAttribute('href')==='#'+s.id));
+});
 </script>
 </body></html>

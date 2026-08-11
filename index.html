@@ -74,4 +74,26 @@ addEventListener('scroll',()=>{
   ls.forEach(a=>a.classList.toggle('on',s&&a.getAttribute('href')==='#'+s.id));
 });
 </script>
+<script>
+// Imagen profesional de logística multimodal en la sección Historia.
+const portraitImage=document.querySelector('.portrait img');
+if(portraitImage){
+  portraitImage.src='assets/operations-multimodal.png';
+  portraitImage.alt='Transporte multimodal: tráiler, puerto y carga aérea';
+}
+
+// Insignia de LinkedIn en la sección Contacto.
+const contactGrid=document.querySelector('.contact-grid');
+if(contactGrid){
+  const badge=document.createElement('div');
+  badge.className='linkedin-badge-wrap';
+  badge.innerHTML='<div class="LI-profile-badge" data-version="v1" data-size="medium" data-locale="es_ES" data-type="VERTICAL" data-theme="light" data-vanity="juan-pablo-s-bb9a8b405"><a class="LI-simple-link" href="https://www.linkedin.com/in/juan-pablo-s-bb9a8b405/">Juan Pablo Soto Maldonado</a></div>';
+  contactGrid.appendChild(badge);
+  const linkedInScript=document.createElement('script');
+  linkedInScript.src='https://platform.linkedin.com/badges/js/profile.js';
+  linkedInScript.async=true;
+  linkedInScript.defer=true;
+  document.body.appendChild(linkedInScript);
+}
+</script>
 </body></html>

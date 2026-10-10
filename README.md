@@ -1,6 +1,6 @@
 # Operations Hub | Portafolio Ejecutivo de Supply Chain
 
-Portafolio profesional de **Juan Pablo Soto Maldonado**, **Supply Chain & Operations Leader** enfocado en dirección operativa, logística multimodal, optimización de redes de distribución y gestión de almacenes (3PL/4PL).
+Portafolio profesional de **Juan Pablo Soto Maldonado**, **Supply Chain & Operations Manager** enfocado en dirección operativa, logística multimodal, optimización de redes de distribución y gestión de almacenes (3PL/4PL).
 
 ## 🚀 Enlaces Clave
 * **Sitio Web en Vivo:** [Operations Hub](https://pablosoto9268-jpg.github.io/operations-hub/)
